@@ -1,7 +1,6 @@
 package com.afrologix.projectmanager.company;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +26,7 @@ public class CompanyModel implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private UUID id; // will be set when persisting
+	private Long id; // will be set when persisting
 
 	private String name;
 	private String email;
