@@ -1,1 +1,11 @@
+server:
+  port: "${PORT:8081}"
 
+spring:
+  application:
+    name: "Project Manager"
+  datasource:
+    url: "${DATABASE_URL:jdbc:mysql://brain@localhost:3306/project_manager?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}"
+  jpa:
+    hibernate:
+      ddl-auto: "update"
