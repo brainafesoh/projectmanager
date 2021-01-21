@@ -1,4 +1,4 @@
-package com.afrologix.projectmanager.company;
+package com.afrologix.projectmanager.contact;
 
 import java.io.Serializable;
 
@@ -16,9 +16,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 /**
- * CompanyModel
+ * ContactModel
  */
-public class CompanyModel implements Serializable {
+public class ContactModel implements Serializable {
 
 	/**
 	 *
@@ -29,15 +29,17 @@ public class CompanyModel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // will be set when persisting
 
-	private String name;
-	private String email;
+	private String lastName;
+	private String firstName;
 	private String tel;
-	private String website;
+	private String email;
+	private String title;
 
-	public CompanyModel(String name, String email, String tel, String website) {
-		this.name = name;
-		this.email = email;
+	public ContactModel(String lastName, String firstName, String tel, String email, String title) {
+		this.lastName = lastName;
+		this.firstName = firstName;
 		this.tel = tel;
-		this.website = website;
+		this.email = email;
+		this.title = title;
 	}
 }
