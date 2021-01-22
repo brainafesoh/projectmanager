@@ -1,8 +1,9 @@
 package com.afrologix.projectmanager.company;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,8 +18,8 @@ public class CompanyService {
 		this.companyRepository = companyRepository;
 	}
 
-	public List<CompanyModel> findAll() {
-		return companyRepository.findAll();
+	public Page<CompanyModel> findAll(Pageable pageable) {
+		return companyRepository.findAll(pageable);
 	}
 
 	public CompanyModel createNewCompany(CompanyModel companyModel) {
@@ -29,9 +30,7 @@ public class CompanyService {
 		return companyRepository.findById(id);
 	}
 
-	public Optional<CompanyModel> deleteCompany(Long id) {
-		Optional<CompanyModel> companyModel = companyRepository.findById(id);
+	public void deleteCompany(Long id) {
 		companyRepository.deleteById(id);
-		return companyModel;
 	}
 }
