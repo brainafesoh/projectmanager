@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.afrologix.projectmanager.project.Project;
-import com.afrologix.projectmanager.user.User;
+import com.afrologix.projectmanager.employee.Employee;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,17 +38,17 @@ public class TimeSheet implements Serializable {
 	private Project project;
 
 	@ManyToOne
-	private User user;
+	private Employee employee;
 
 	private String activity;
 	private Date startTime;
 	private Date endTime;
 	private Boolean isAdditionalHour;
 
-	public TimeSheet(Project project, User user, String activity, Date startTime, Date endTime,
+	public TimeSheet(Project project, Employee employee, String activity, Date startTime, Date endTime,
 			Boolean isAdditionalHour) {
 		this.project = project;
-		this.user = user;
+		this.employee = employee;
 		this.activity = activity;
 		this.startTime = startTime;
 		this.endTime = endTime;

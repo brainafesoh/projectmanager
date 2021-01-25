@@ -1,4 +1,4 @@
-package com.afrologix.projectmanager.user;
+package com.afrologix.projectmanager.employee;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,34 +16,34 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/employee")
 /**
- * UserController
+ * EmployeeController
  */
-public class UserController {
+public class EmployeeController {
 
 	@Autowired
-	private UserService userService;
+	private EmployeeService employeeService;
 
 	@GetMapping
-	public List<User> findAllCompanies() {
-		return userService.findAll();
+	public List<Employee> findAllCompanies() {
+		return employeeService.findAll();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public User create(@RequestBody User user) {
-		return userService.createNewUser(user);
+	public Employee create(@RequestBody Employee employee) {
+		return employeeService.createNewEmployee(employee);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<User> findOne(@PathVariable Long id) {
-		return userService.findUser(id);
+	public Optional<Employee> findOne(@PathVariable Long id) {
+		return employeeService.findEmployee(id);
 	}
 
 	@DeleteMapping("/{id}")
-	public Optional<User> delete(@PathVariable Long id) {
-		return userService.deleteUser(id);
+	public Optional<Employee> delete(@PathVariable Long id) {
+		return employeeService.deleteEmployee(id);
 	}
 
 }

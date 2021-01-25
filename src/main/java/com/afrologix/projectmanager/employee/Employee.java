@@ -1,4 +1,4 @@
-package com.afrologix.projectmanager.user;
+package com.afrologix.projectmanager.employee;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,11 +16,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(schema = "public")
 /**
- * User
+ * Employee
  */
-public class User implements Serializable {
+public class Employee implements Serializable {
 
 	/**
 	 *
@@ -39,7 +37,7 @@ public class User implements Serializable {
 	private String title;
 	private Date hiringDate;
 
-	public User(String firstName, String lastName, String email, String tel, String title, Date hiringDate) {
+	public Employee(String firstName, String lastName, String email, String tel, String title, Date hiringDate) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
