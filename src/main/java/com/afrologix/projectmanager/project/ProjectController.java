@@ -26,23 +26,23 @@ public class ProjectController {
 	private ProjectService projectService;
 
 	@GetMapping
-	public List<ProjectModel> findAllCompanies() {
+	public List<Project> findAllCompanies() {
 		return projectService.findAll();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ProjectModel create(@RequestBody ProjectModel projectModel) {
-		return projectService.createNewProject(projectModel);
+	public Project create(@RequestBody Project project) {
+		return projectService.createNewProject(project);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<ProjectModel> findOne(@PathVariable Long id) {
+	public Optional<Project> findOne(@PathVariable Long id) {
 		return projectService.findProject(id);
 	}
 
 	@DeleteMapping("/{id}")
-	public Optional<ProjectModel> delete(@PathVariable Long id) {
+	public Optional<Project> delete(@PathVariable Long id) {
 		return projectService.deleteProject(id);
 	}
 

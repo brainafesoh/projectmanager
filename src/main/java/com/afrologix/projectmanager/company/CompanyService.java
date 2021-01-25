@@ -18,15 +18,15 @@ public class CompanyService {
 		this.companyRepository = companyRepository;
 	}
 
-	public Page<CompanyModel> findAll(Pageable pageable) {
+	public Page<Company> findAll(Pageable pageable) {
 		return companyRepository.findAll(pageable);
 	}
 
-	public CompanyModel createNewCompany(CompanyModel companyModel) {
-		return companyRepository.save(companyModel);
+	public Company createNewCompany(Company company) {
+		return companyRepository.save(company);
 	}
 
-	public Optional<CompanyModel> findCompany(Long id) {
+	public Optional<Company> findCompany(Long id) {
 		return companyRepository.findById(id);
 	}
 

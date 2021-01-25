@@ -17,21 +17,21 @@ public class ContactService {
 		this.contactRepository = contactRepository;
 	}
 
-	public List<ContactModel> findAll() {
+	public List<Contact> findAll() {
 		return contactRepository.findAll();
 	}
 
-	public ContactModel createNewContact(ContactModel contactModel) {
-		return contactRepository.save(contactModel);
+	public Contact createNewContact(Contact contact) {
+		return contactRepository.save(contact);
 	}
 
-	public Optional<ContactModel> findContact(Long id) {
+	public Optional<Contact> findContact(Long id) {
 		return contactRepository.findById(id);
 	}
 
-	public Optional<ContactModel> deleteContact(Long id) {
-		Optional<ContactModel> contactModel = contactRepository.findById(id);
+	public Optional<Contact> deleteContact(Long id) {
+		Optional<Contact> contact = contactRepository.findById(id);
 		contactRepository.deleteById(id);
-		return contactModel;
+		return contact;
 	}
 }

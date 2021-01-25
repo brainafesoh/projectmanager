@@ -30,19 +30,19 @@ public class CompanyController {
 	private CompanyService companyService;
 
 	@GetMapping
-	public ResponseEntity<List<CompanyModel>> findAllCompanies(Pageable pageable) {
-		Page<CompanyModel> allCompanies = companyService.findAll(pageable);
+	public ResponseEntity<List<Company>> findAllCompanies(Pageable pageable) {
+		Page<Company> allCompanies = companyService.findAll(pageable);
 		return new ResponseEntity<>(allCompanies.getContent(), HttpStatus.OK);
 	}
 
 	@PostMapping
-	public ResponseEntity<CompanyModel> create(@RequestBody @Valid CompanyModel companyModel) {
-		CompanyModel newCompanyModel = companyService.createNewCompany(companyModel);
-		return new ResponseEntity<>(newCompanyModel, HttpStatus.CREATED);
+	public ResponseEntity<Company> create(@RequestBody @Valid Company company) {
+		Company newCompany = companyService.createNewCompany(company);
+		return new ResponseEntity<>(newCompany, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<CompanyModel> findOne(@PathVariable Long id) {
+	public Optional<Company> findOne(@PathVariable Long id) {
 		return companyService.findCompany(id);
 	}
 
@@ -52,9 +52,9 @@ public class CompanyController {
 	}
 
 	@PutMapping
-	public ResponseEntity<CompanyModel> updateCompany(@RequestBody @Valid CompanyModel companyModel) {
-		CompanyModel newCompanyModel = companyService.createNewCompany(companyModel);
-		return new ResponseEntity<>(newCompanyModel, HttpStatus.OK);
+	public ResponseEntity<Company> updateCompany(@RequestBody @Valid Company company) {
+		Company newCompany = companyService.createNewCompany(company);
+		return new ResponseEntity<>(newCompany, HttpStatus.OK);
 	}
 
 }

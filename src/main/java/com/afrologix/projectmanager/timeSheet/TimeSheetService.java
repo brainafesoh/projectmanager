@@ -17,21 +17,21 @@ public class TimeSheetService {
 		this.TimeSheetRepository = TimeSheetRepository;
 	}
 
-	public List<TimeSheetModel> findAll() {
+	public List<TimeSheet> findAll() {
 		return TimeSheetRepository.findAll();
 	}
 
-	public TimeSheetModel createNewTimeSheet(TimeSheetModel TimeSheetModel) {
-		return TimeSheetRepository.save(TimeSheetModel);
+	public TimeSheet createNewTimeSheet(TimeSheet TimeSheet) {
+		return TimeSheetRepository.save(TimeSheet);
 	}
 
-	public Optional<TimeSheetModel> findTimeSheet(Long id) {
+	public Optional<TimeSheet> findTimeSheet(Long id) {
 		return TimeSheetRepository.findById(id);
 	}
 
-	public Optional<TimeSheetModel> deleteTimeSheet(Long id) {
-		Optional<TimeSheetModel> TimeSheetModel = TimeSheetRepository.findById(id);
+	public Optional<TimeSheet> deleteTimeSheet(Long id) {
+		Optional<TimeSheet> TimeSheet = TimeSheetRepository.findById(id);
 		TimeSheetRepository.deleteById(id);
-		return TimeSheetModel;
+		return TimeSheet;
 	}
 }

@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.afrologix.projectmanager.project.ProjectModel;
-import com.afrologix.projectmanager.user.UserModel;
+import com.afrologix.projectmanager.project.Project;
+import com.afrologix.projectmanager.user.User;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +21,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 /**
- * TimeSheetModel
+ * TimeSheet
  */
-public class TimeSheetModel implements Serializable {
+public class TimeSheet implements Serializable {
 
 	/**
 	 *
@@ -35,20 +35,20 @@ public class TimeSheetModel implements Serializable {
 	private Long id; // will be set when persisting
 
 	@ManyToOne
-	private ProjectModel projectModel;
+	private Project project;
 
 	@ManyToOne
-	private UserModel userModel;
+	private User user;
 
 	private String activity;
 	private Date startTime;
 	private Date endTime;
 	private Boolean isAdditionalHour;
 
-	public TimeSheetModel(ProjectModel projectModel, UserModel userModel, String activity, Date startTime, Date endTime,
+	public TimeSheet(Project project, User user, String activity, Date startTime, Date endTime,
 			Boolean isAdditionalHour) {
-		this.projectModel = projectModel;
-		this.userModel = userModel;
+		this.project = project;
+		this.user = user;
 		this.activity = activity;
 		this.startTime = startTime;
 		this.endTime = endTime;

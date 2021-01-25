@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * ProjectRepository
  */
-public interface ProjectRepository extends JpaRepository<ProjectModel, Long> {
+public interface ProjectRepository extends JpaRepository<Project, Long> {
 	
 }

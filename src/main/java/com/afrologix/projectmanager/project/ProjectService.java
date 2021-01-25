@@ -17,21 +17,21 @@ public class ProjectService {
 		this.projectRepository = projectRepository;
 	}
 
-	public List<ProjectModel> findAll() {
+	public List<Project> findAll() {
 		return projectRepository.findAll();
 	}
 
-	public ProjectModel createNewProject(ProjectModel projectModel) {
-		return projectRepository.save(projectModel);
+	public Project createNewProject(Project project) {
+		return projectRepository.save(project);
 	}
 
-	public Optional<ProjectModel> findProject(Long id) {
+	public Optional<Project> findProject(Long id) {
 		return projectRepository.findById(id);
 	}
 
-	public Optional<ProjectModel> deleteProject(Long id) {
-		Optional<ProjectModel> projectModel = projectRepository.findById(id);
+	public Optional<Project> deleteProject(Long id) {
+		Optional<Project> project = projectRepository.findById(id);
 		projectRepository.deleteById(id);
-		return projectModel;
+		return project;
 	}
 }

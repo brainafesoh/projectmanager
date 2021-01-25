@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.afrologix.projectmanager.company.CompanyModel;
-import com.afrologix.projectmanager.contact.ContactModel;
+import com.afrologix.projectmanager.company.Company;
+import com.afrologix.projectmanager.contact.Contact;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +21,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 /**
- * ProjectModel
+ * Project
  */
-public class ProjectModel implements Serializable {
+public class Project implements Serializable {
 
 	/**
 	 *
@@ -35,10 +35,10 @@ public class ProjectModel implements Serializable {
 	private Long id; // will be set when persisting
 
 	@ManyToOne
-	private CompanyModel companyModel;
+	private Company company;
 
 	@ManyToOne
-	private ContactModel contactModel;
+	private Contact contact;
 
 	private String name;
 	private String type;
@@ -46,10 +46,10 @@ public class ProjectModel implements Serializable {
 	private Date startDate;
 	private Date endDate;
 
-	public ProjectModel(CompanyModel companyModel, ContactModel contactModel, String name, String type, String budget,
+	public Project(Company company, Contact contact, String name, String type, String budget,
 			Date startDate, Date endDate) {
-		this.companyModel = companyModel;
-		this.contactModel = contactModel;
+		this.company = company;
+		this.contact = contact;
 		this.name = name;
 		this.type = type;
 		this.budget = budget;

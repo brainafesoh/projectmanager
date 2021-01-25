@@ -1,12 +1,12 @@
-package com.afrologix.projectmanager.user;
+package com.afrologix.projectmanager.contact;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,9 +16,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 /**
- * UserModel
+ * Contact
  */
-public class UserModel implements Serializable {
+public class Contact implements Serializable {
 
 	/**
 	 *
@@ -29,19 +29,17 @@ public class UserModel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // will be set when persisting
 
-	private String firstName;
 	private String lastName;
-	private String email;
+	private String firstName;
 	private String tel;
+	private String email;
 	private String title;
-	private Date hiringDate;
 
-	public UserModel(String firstName, String lastName, String email, String tel, String title, Date hiringDate) {
-		this.firstName = firstName;
+	public Contact(String lastName, String firstName, String tel, String email, String title) {
 		this.lastName = lastName;
-		this.email = email;
+		this.firstName = firstName;
 		this.tel = tel;
+		this.email = email;
 		this.title = title;
-		this.hiringDate = hiringDate;
 	}
 }

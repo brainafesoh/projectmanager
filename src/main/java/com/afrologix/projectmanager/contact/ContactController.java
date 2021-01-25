@@ -26,23 +26,23 @@ public class ContactController {
 	private ContactService contactService;
 
 	@GetMapping
-	public List<ContactModel> findAllCompanies() {
+	public List<Contact> findAllCompanies() {
 		return contactService.findAll();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public ContactModel create(@RequestBody ContactModel contactModel) {
-		return contactService.createNewContact(contactModel);
+	public Contact create(@RequestBody Contact contact) {
+		return contactService.createNewContact(contact);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<ContactModel> findOne(@PathVariable Long id) {
+	public Optional<Contact> findOne(@PathVariable Long id) {
 		return contactService.findContact(id);
 	}
 
 	@DeleteMapping("/{id}")
-	public Optional<ContactModel> delete(@PathVariable Long id) {
+	public Optional<Contact> delete(@PathVariable Long id) {
 		return contactService.deleteContact(id);
 	}
 

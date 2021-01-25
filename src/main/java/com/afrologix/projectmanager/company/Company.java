@@ -23,9 +23,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // Default constructor: doesn't take any parameters
 @AllArgsConstructor // Constructor that takes all parameters
 /**
- * CompanyModel
+ * Company
  */
-public class CompanyModel implements Serializable {
+public class Company implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

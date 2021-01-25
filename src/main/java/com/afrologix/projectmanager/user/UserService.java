@@ -17,21 +17,21 @@ public class UserService {
 		this.userRepository = userRepository;
 	}
 
-	public List<UserModel> findAll() {
+	public List<User> findAll() {
 		return userRepository.findAll();
 	}
 
-	public UserModel createNewUser(UserModel userModel) {
-		return userRepository.save(userModel);
+	public User createNewUser(User user) {
+		return userRepository.save(user);
 	}
 
-	public Optional<UserModel> findUser(Long id) {
+	public Optional<User> findUser(Long id) {
 		return userRepository.findById(id);
 	}
 
-	public Optional<UserModel> deleteUser(Long id) {
-		Optional<UserModel> userModel = userRepository.findById(id);
+	public Optional<User> deleteUser(Long id) {
+		Optional<User> user = userRepository.findById(id);
 		userRepository.deleteById(id);
-		return userModel;
+		return user;
 	}
 }

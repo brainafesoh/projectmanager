@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * ContactRepository
  */
-public interface ContactRepository extends JpaRepository<ContactModel, Long> {
+public interface ContactRepository extends JpaRepository<Contact, Long> {
 
 }

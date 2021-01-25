@@ -26,23 +26,23 @@ public class TimeSheetController {
 	private TimeSheetService TimeSheetService;
 
 	@GetMapping
-	public List<TimeSheetModel> findAllCompanies() {
+	public List<TimeSheet> findAllCompanies() {
 		return TimeSheetService.findAll();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public TimeSheetModel create(@RequestBody TimeSheetModel TimeSheetModel) {
-		return TimeSheetService.createNewTimeSheet(TimeSheetModel);
+	public TimeSheet create(@RequestBody TimeSheet TimeSheet) {
+		return TimeSheetService.createNewTimeSheet(TimeSheet);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<TimeSheetModel> findOne(@PathVariable Long id) {
+	public Optional<TimeSheet> findOne(@PathVariable Long id) {
 		return TimeSheetService.findTimeSheet(id);
 	}
 
 	@DeleteMapping("/{id}")
-	public Optional<TimeSheetModel> delete(@PathVariable Long id) {
+	public Optional<TimeSheet> delete(@PathVariable Long id) {
 		return TimeSheetService.deleteTimeSheet(id);
 	}
 

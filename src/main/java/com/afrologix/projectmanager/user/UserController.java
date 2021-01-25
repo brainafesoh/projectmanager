@@ -26,23 +26,23 @@ public class UserController {
 	private UserService userService;
 
 	@GetMapping
-	public List<UserModel> findAllCompanies() {
+	public List<User> findAllCompanies() {
 		return userService.findAll();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public UserModel create(@RequestBody UserModel userModel) {
-		return userService.createNewUser(userModel);
+	public User create(@RequestBody User user) {
+		return userService.createNewUser(user);
 	}
 
 	@GetMapping("/{id}")
-	public Optional<UserModel> findOne(@PathVariable Long id) {
+	public Optional<User> findOne(@PathVariable Long id) {
 		return userService.findUser(id);
 	}
 
 	@DeleteMapping("/{id}")
-	public Optional<UserModel> delete(@PathVariable Long id) {
+	public Optional<User> delete(@PathVariable Long id) {
 		return userService.deleteUser(id);
 	}
 
